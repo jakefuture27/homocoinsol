@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="star-texture"></div>
@@ -51,83 +51,93 @@
     <!-- Main Site Content (Hidden Initially) -->
     <div id="main-site" style="display: none;">
 
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav-logo">$NEVER</div>
+            <div class="nav-links">
+                <a href="#about">ABOUT</a>
+                <a href="https://x.com/homoonsolanas" target="_blank">TWITTER</a>
+                <button class="nav-btn">BUY $NEVER</button>
+            </div>
+        </nav>
 
-
-    <!-- Floating Fists Container -->
-    <div class="floating-balls" id="floating-balls-container"></div>
-
-    <div class="marquee-container">
-        <div class="marquee-content neon-blue-text">
-            NEVER KILL YOURSELF $NEVER NEVER KILL YOURSELF $NEVER NEVER KILL YOURSELF $NEVER
+        <!-- Floating Background Elements -->
+        <div class="floating-balls" id="floating-balls-container"></div>
+        <div class="marquee-container">
+            <div class="marquee-content neon-blue-text">
+                NEVER KILL YOURSELF $NEVER NEVER KILL YOURSELF $NEVER NEVER KILL YOURSELF $NEVER
+            </div>
         </div>
-    </div>
 
-    <div class="container">
-        <!-- Header -->
-        <header class="homo-header">
-            <h1 class="title neon-blue-text" data-text="$NEVER">$NEVER</h1>
-            <h2 class="subtitle">NEVER KILL YOURSELF</h2>
-        </header>
-
-        <!-- Main Logo Section -->
-        <section class="logo-section">
-            <div class="floating-tweet tweet-1">
-                <div class="tweet-header">
-                    <div class="avatar" style="background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);"></div>
-                    <div class="tweet-user">
-                        <span class="name">kmoney <span class="verified">✔</span></span>
-                        <span class="handle">@kmoney</span>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-image-container">
+                <img src="./never.png" alt="Never Kill Yourself Glow" class="hero-image" onerror="this.src='https://via.placeholder.com/400x200/000000/00f3ff?text=Save+image+as+never.png'">
+                
+                <!-- Floating Tweets -->
+                <div class="floating-tweet tweet-1">
+                    <div class="tweet-header">
+                        <div class="avatar" style="background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);"></div>
+                        <div class="tweet-user">
+                            <span class="name">kmoney <span class="verified">✔</span></span>
+                            <span class="handle">@kmoney</span>
+                        </div>
                     </div>
+                    <div class="tweet-content">never kill yourself</div>
                 </div>
-                <div class="tweet-content">never kill yourself</div>
+
+                <div class="floating-tweet tweet-2">
+                    <div class="tweet-header">
+                        <div class="avatar" style="background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);"></div>
+                        <div class="tweet-user">
+                            <span class="name">Solana <span class="verified">✔</span></span>
+                            <span class="handle">@solana</span>
+                        </div>
+                    </div>
+                    <div class="tweet-content">Never kill yourself</div>
+                </div>
+
+                <div class="floating-tweet tweet-3">
+                    <div class="tweet-header">
+                        <div class="avatar" style="background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);"></div>
+                        <div class="tweet-user">
+                            <span class="name">alon <span class="verified">✔</span></span>
+                            <span class="handle">@a11on9</span>
+                        </div>
+                    </div>
+                    <div class="tweet-content">never kill yourself</div>
+                </div>
+
+                <div class="floating-tweet tweet-4">
+                    <div class="tweet-header">
+                        <div class="avatar" style="background: linear-gradient(to top, #30cfd0 0%, #330867 100%);"></div>
+                        <div class="tweet-user">
+                            <span class="name">Ansem <span class="verified">✔</span></span>
+                            <span class="handle">@blancdad0</span>
+                        </div>
+                    </div>
+                    <div class="tweet-content">never kill yourself</div>
+                </div>
             </div>
 
-            <div class="floating-tweet tweet-2">
-                <div class="tweet-header">
-                    <div class="avatar" style="background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);"></div>
-                    <div class="tweet-user">
-                        <span class="name">Solana <span class="verified">✔</span></span>
-                        <span class="handle">@solana</span>
-                    </div>
-                </div>
-                <div class="tweet-content">Never kill yourself</div>
+            <h1 class="hero-title neon-blue-text">$NEVER</h1>
+            <h2 class="hero-subtitle">never kill yourself</h2>
+            <p class="hero-subtext">the trenches are dark. everyone else gave up. we hold the line.</p>
+            
+            <div class="hero-buttons">
+                <button class="btn-solid">BUY $NEVER</button>
+                <button class="btn-outline">WHY THO?</button>
             </div>
-
-            <img src="./never.png" alt="Never Kill Yourself Glow" id="main-logo" onerror="this.src='https://via.placeholder.com/800x400/000000/00f3ff?text=Save+image+as+never.png'">
-
-            <div class="floating-tweet tweet-3">
-                <div class="tweet-header">
-                    <div class="avatar" style="background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);"></div>
-                    <div class="tweet-user">
-                        <span class="name">alon <span class="verified">✔</span></span>
-                        <span class="handle">@a11on9</span>
-                    </div>
-                </div>
-                <div class="tweet-content">never kill yourself</div>
-            </div>
-
-            <div class="floating-tweet tweet-4">
-                <div class="tweet-header">
-                    <div class="avatar" style="background: linear-gradient(to top, #30cfd0 0%, #330867 100%);"></div>
-                    <div class="tweet-user">
-                        <span class="name">Ansem <span class="verified">✔</span></span>
-                        <span class="handle">@blancdad0</span>
-                    </div>
-                </div>
-                <div class="tweet-content">never kill yourself</div>
-            </div>
-        </section>
-
-        <!-- Information / Links -->
-        <section class="info-section">
-            <div class="retro-box ca-box">
+            
+            <div class="retro-box ca-box mt-10" style="margin-top: 3rem;">
                 <span class="ca-label">CA:</span>
                 <code id="ca-text">HziPQunVCQN6Knjxv96pEjqLxpJsZ7KFvHGV7TVEpump</code>
                 <button id="copy-btn" title="Copy to clipboard">COPY</button>
             </div>
         </section>
 
-    </div>
+        <div class="scroll-down">scroll down</div>
+
     </div> <!-- End Main Site -->
 
     <script src="script.js"></script>
