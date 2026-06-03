@@ -73,42 +73,7 @@ body {
     100% { transform: translateX(-50%); } 
 }
 
-/* Socials Top Right */
-.top-socials {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 50;
-}
 
-.social-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: #000;
-    color: var(--neon-blue);
-    text-decoration: none;
-    font-family: 'Bangers', cursive;
-    font-size: 1.5rem;
-    padding: 0.5rem 1.2rem;
-    border: 2px solid var(--neon-blue);
-    border-radius: 8px;
-    box-shadow: 0 0 10px var(--neon-blue);
-    transition: transform 0.1s, box-shadow 0.1s;
-}
-
-.social-btn:hover {
-    background-color: #111;
-    box-shadow: 0 0 20px var(--neon-blue);
-}
-
-.social-btn:active {
-    transform: scale(0.95);
-}
-
-.social-btn svg {
-    margin-top: -2px;
-}
 
 /* Layout */
 .container {
