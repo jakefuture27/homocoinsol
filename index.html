@@ -13,33 +13,14 @@
 <body>
     <div class="star-texture"></div>
 
-    <!-- Intro Screen (Windows 95) -->
-    <div id="intro-screen">
-        <div class="intro-bg-gradient"></div>
-        <div class="intro-bg-glow"></div>
+    <!-- Vault Intro Screen -->
+    <div id="intro-screen" class="vault-container">
+        <div class="vault-door vault-left" id="vault-left"></div>
+        <div class="vault-door vault-right" id="vault-right"></div>
         
-        <div class="win95-box z-10 w-full max-w-md mx-4">
-            <div class="win95-window shadow-2xl">
-                <div class="win95-titlebar px-2 py-1 flex items-center justify-between select-none">
-                    <span class="text-white text-sm font-bold tracking-wide" style="font-family: 'Comic Neue', monospace;">system_warning.exe</span>
-                    <div class="win95-controls flex gap-1">
-                        <button class="win95-btn text-xs flex items-center justify-center text-black">_</button>
-                        <button class="win95-btn text-xs flex items-center justify-center text-black">□</button>
-                        <button class="win95-btn text-xs flex items-center justify-center text-black font-bold">x</button>
-                    </div>
-                </div>
-                <div class="win95-content p-6 flex flex-col items-center gap-5 text-center">
-                    <p class="text-black text-sm leading-relaxed" style="font-family: 'Comic Neue', monospace; font-size: 1.2rem;">
-                        WARNING: Extreme wealth detected.
-                    </p>
-                    <p class="text-black font-bold text-sm" style="font-family: 'Comic Neue', monospace; font-size: 1.2rem;">
-                        Are you ready to enter the vault?
-                    </p>
-                    <button id="enter-btn" class="win95-action-btn px-8 py-2 text-black font-bold text-sm tracking-wider cursor-pointer" style="font-family: 'Comic Neue', monospace; font-size: 1.5rem;">
-                        I AM READY
-                    </button>
-                </div>
-            </div>
+        <div class="vault-center-piece" id="vault-lock">
+            <div class="vault-wheel"></div>
+            <button id="enter-btn" class="vault-btn">UNLOCK WEALTH</button>
         </div>
     </div>
 
@@ -66,8 +47,10 @@
 
         <!-- Hero Section -->
         <section class="hero-section">
+            <div class="net-worth-display">Net Worth: $<span id="net-worth">0</span></div>
+            
             <div class="hero-image-container">
-                <img src="./digital.jpg" alt="Digital Money Coin" class="hero-image" onerror="this.src='https://via.placeholder.com/400x200/000000/ffd700?text=Save+image+as+digital.jpg'">
+                <img src="./digital.jpg" alt="Digital Money Coin" id="main-logo" class="hero-image" onerror="this.src='https://via.placeholder.com/400x200/000000/ffd700?text=Save+image+as+digital.jpg'">
             </div>
 
             <h1 class="hero-title gold-text">$DIGITAL</h1>

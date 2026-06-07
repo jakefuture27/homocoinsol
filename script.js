@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (enterBtn) {
         enterBtn.addEventListener('click', () => {
-            introScreen.style.opacity = '0';
+            introScreen.classList.add('vault-open');
             setTimeout(() => {
                 introScreen.style.display = 'none';
                 mainSite.style.display = 'block';
-            }, 1000); // 1s fade out
+            }, 2000); // Wait for vault door animation (2s)
         });
     }
 
@@ -78,5 +78,63 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 2000);
             }
         });
+    }
+
+    // Make It Rain Minigame
+    const mainLogo = document.getElementById('main-logo');
+    const netWorthSpan = document.getElementById('net-worth');
+    let netWorth = 0;
+
+    if (mainLogo && netWorthSpan) {
+        mainLogo.addEventListener('click', (e) => {
+            // Increase Net Worth
+            const earned = Math.floor(Math.random() * 90000) + 10000; // 10k to 100k
+            netWorth += earned;
+            netWorthSpan.innerText = netWorth.toLocaleString();
+
+            // Spawn Coins
+            const numCoins = Math.floor(Math.random() * 5) + 5; // 5 to 10 coins per click
+            for (let i = 0; i < numCoins; i++) {
+                spawnPhysicsCoin(e.clientX, e.clientY);
+            }
+        });
+    }
+
+    function spawnPhysicsCoin(x, y) {
+        const coin = document.createElement('div');
+        const items = ['💰', '🪙', '💎', '💵'];
+        coin.innerText = items[Math.floor(Math.random() * items.length)];
+        coin.className = 'physics-coin';
+        coin.style.fontSize = (Math.random() * 2 + 1.5) + 'rem';
+        coin.style.left = x + 'px';
+        coin.style.top = y + 'px';
+        document.body.appendChild(coin);
+
+        let posX = x;
+        let posY = y;
+        let velocityX = (Math.random() - 0.5) * 20; // random horizontal spread
+        let velocityY = (Math.random() * -15) - 10; // jump up
+        let gravity = 0.8;
+        let rotation = 0;
+        let rotationSpeed = (Math.random() - 0.5) * 20;
+
+        function update() {
+            velocityY += gravity;
+            posX += velocityX;
+            posY += velocityY;
+            rotation += rotationSpeed;
+
+            coin.style.left = posX + 'px';
+            coin.style.top = posY + 'px';
+            coin.style.transform = `rotate(${rotation}deg)`;
+
+            // Remove if it falls off screen
+            if (posY > window.innerHeight + 100) {
+                coin.remove();
+            } else {
+                requestAnimationFrame(update);
+            }
+        }
+        requestAnimationFrame(update);
     }
 });

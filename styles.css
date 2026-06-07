@@ -419,83 +419,135 @@ body {
     100% { transform: translate(0, 0) rotate(360deg); }
 }
 
-/* Intro Screen */
-#intro-screen {
+/* Net Worth Counter */
+.net-worth-display {
+    font-size: 3rem;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+    margin-bottom: 2rem;
+    background: rgba(0,0,0,0.5);
+    padding: 0.5rem 2rem;
+    border: 2px solid #00ff00;
+    border-radius: 12px;
+    z-index: 20;
+}
+
+#main-logo {
+    cursor: pointer;
+    transition: transform 0.1s;
+    position: relative;
+    z-index: 20;
+}
+
+#main-logo:active {
+    transform: scale(0.9);
+}
+
+/* Vault Intro Screen */
+.vault-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--bg-space);
+    z-index: 1000;
+    display: flex;
+    overflow: hidden;
+    background-color: transparent;
+    pointer-events: auto;
+}
+
+.vault-door {
+    width: 50vw;
+    height: 100vh;
+    background: linear-gradient(90deg, #222, #444, #222);
+    border: 10px solid #111;
+    position: absolute;
+    top: 0;
+    transition: transform 2s cubic-bezier(0.64, 0, 0.78, 0);
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+}
+
+.vault-left {
+    left: 0;
+    border-right: 5px solid #000;
+}
+
+.vault-right {
+    right: 0;
+    border-left: 5px solid #000;
+}
+
+.vault-center-piece {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    z-index: 1000;
-    transition: opacity 1s ease;
+    justify-content: center;
 }
 
-.intro-bg-gradient {
-    position: absolute;
-    inset: 0;
-    background: #000;
-}
-
-/* Windows 95 Box */
-.win95-box {
+.vault-wheel {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 20px solid #ffd700;
+    background: radial-gradient(circle, #555 30%, #222 100%);
+    box-shadow: 0 0 50px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.5);
     position: relative;
-    z-index: 10;
-    margin: 0 1rem;
-    max-width: 450px;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -150px; /* Overlap button */
+    transition: transform 2s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1s 1s;
 }
 
-.win95-window {
-    background-color: #c0c0c0;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-    border-right: 2px solid #404040;
-    border-bottom: 2px solid #404040;
-    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.8);
+.vault-wheel::before, .vault-wheel::after {
+    content: '';
+    position: absolute;
+    background: #ffd700;
 }
+.vault-wheel::before { width: 100%; height: 20px; }
+.vault-wheel::after { height: 100%; width: 20px; }
 
-.win95-titlebar {
-    background: linear-gradient(to right, #000080, #1084d0);
-}
-
-.win95-btn {
-    width: 20px;
-    height: 20px;
-    background-color: #c0c0c0;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-    border-right: 2px solid #404040;
-    border-bottom: 2px solid #404040;
+.vault-btn {
+    background: linear-gradient(to bottom, #ffd700, #b8860b);
+    color: #000;
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    border: 4px solid #fff;
+    border-radius: 50px;
     cursor: pointer;
+    box-shadow: 0 0 20px #ffd700;
+    z-index: 1002;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.5s;
 }
 
-.win95-btn:active {
-    border-top: 2px solid #404040;
-    border-left: 2px solid #404040;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
+.vault-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #ffd700;
 }
 
-.win95-action-btn {
-    background-color: #c0c0c0;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
-    border-right: 2px solid #404040;
-    border-bottom: 2px solid #404040;
-    transition: all 0.1s;
+.vault-btn:active {
+    transform: scale(0.95);
 }
 
-.win95-action-btn:active {
-    border-top: 2px solid #404040;
-    border-left: 2px solid #404040;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
-    background-color: #d4d0c8;
+.vault-open .vault-left { transform: translateX(-100%); }
+.vault-open .vault-right { transform: translateX(100%); }
+.vault-open .vault-wheel { transform: rotate(720deg) scale(0.5); opacity: 0; }
+.vault-open .vault-btn { opacity: 0; pointer-events: none; }
+
+/* Physics Coin */
+.physics-coin {
+    position: absolute;
+    pointer-events: none;
+    z-index: 999;
 }
 
 /* Responsive */
